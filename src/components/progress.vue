@@ -182,25 +182,25 @@
 
 <script>
 
-    export default {
-        name: "login.vue",
-        data() {
-          return {
+  export default {
+    name: "progress.vue",
+    data() {
+      return {
 
-          }
-        },
-        methods:{
-          init:function () {
+      }
+    },
+    methods:{
+      init:function () {
 
-          },
-        },
-        created:function () {
-          this.init();
-        },
-        filters:{
+      },
+    },
+    created:function () {
+      this.init();
+    },
+    filters:{
 
-        }
     }
+  }
 </script>
 
 <style scoped>

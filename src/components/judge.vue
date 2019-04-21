@@ -1,11 +1,11 @@
 <template>
-  <div style="width:980px">
+  <div style="width:980px;" ref="mparent">
 
-    <el-container>
+    <!--<el-container>
       <el-header>
         <el-row>
           <el-col :span="4" style="line-height: 70px;text-align: left">
-            班级: 公共班级
+            课程评价
           </el-col>
           <el-col :span="4" style="line-height: 70px;text-align: left">
             管理老师: 张建飞
@@ -13,7 +13,7 @@
         </el-row>
       </el-header>
 
-      <hr style="width:100%;border: 1px solid #eee">
+      <hr style="width:96%;border: 1px solid #eee">
 
       <el-header>
         <el-row style="padding:20px 0px 20px 0px ">
@@ -174,33 +174,48 @@
         </el-row>
       </el-header>
 
-    </el-container>
-
-
+    </el-container>-->
+    <plugin_input_number ref="plugin_input_number"></plugin_input_number>
+  <el-button @click="debuggerMethod">debugger</el-button>
+    <div class="red">
+      datetime:{{datetime}}
+    </div>
   </div>
 </template>
 
 <script>
+  import '@/components/css/judge.css'
 
-    export default {
-        name: "login.vue",
-        data() {
-          return {
+  import $COMMON_METHODS from '@/components/javascript/common.js'
 
-          }
-        },
-        methods:{
-          init:function () {
+  import input_number from '@/components/plugin/input_number'
+
+  export default {
+      name: "judge",
+      data() {
+        return {
+          name:'judge',
+          data_of_plugin_input_number:{
 
           },
-        },
-        created:function () {
-          this.init();
-        },
-        filters:{
-
+          datetime:'',
         }
-    }
+      },
+      methods:{
+        init:function () {
+          this.data_of_plugin_input_number=this.$refs.plugin_input_number.$data;
+        },
+        debuggerMethod:function () {
+          this.datetime=$COMMON_METHODS.dateForat(this.datetime);
+        }
+      },
+      components:{
+        plugin_input_number:input_number,
+      },
+      mounted:function () {
+        this.init();
+      },
+  }
 </script>
 
 <style scoped>
