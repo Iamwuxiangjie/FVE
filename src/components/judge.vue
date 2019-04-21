@@ -175,18 +175,22 @@
       </el-header>
 
     </el-container>-->
-    <plugin_input_number ref="plugin_input_number"></plugin_input_number>
-  <el-button @click="debuggerMethod">debugger</el-button>
+    {{score}}
+    <plugin_input_number :score="score" :scoreChange="scoreChange"></plugin_input_number>
+
+    <el-button @click="debuggerMethod()">debugger</el-button>
     <div class="red">
       datetime:{{datetime}}
     </div>
   </div>
+
 </template>
 
 <script>
   import '@/components/css/judge.css'
 
-  import $COMMON_METHODS from '@/components/javascript/common.js'
+  import $COMMON_METHODS from '@/components/js/common.js'
+  import {dateFormat} from '@/components/js/test.js'
 
   import input_number from '@/components/plugin/input_number'
 
@@ -199,14 +203,19 @@
 
           },
           datetime:'',
+          score:0,
         }
       },
       methods:{
         init:function () {
-          this.data_of_plugin_input_number=this.$refs.plugin_input_number.$data;
+          //this.data_of_plugin_input_number=this.$refs.plugin_input_number.$data;
+          //this.$data.
         },
         debuggerMethod:function () {
-          this.datetime=$COMMON_METHODS.dateForat(this.datetime);
+          this.datetime=dateFormat(this.datetime);//$COMMON_METHODS.dateFormat(this.datetime);
+        },
+        scoreChange:function (val) {
+          this.score=val;
         }
       },
       components:{
