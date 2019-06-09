@@ -1,182 +1,14 @@
 <template>
-  <div style="width:980px">
-
-    <el-container>
-      <el-header>
-        <el-row>
-          <el-col :span="4" style="line-height: 70px;text-align: left">
-            班级: 公共班级
-          </el-col>
-          <el-col :span="4" style="line-height: 70px;text-align: left">
-            管理老师: 张建飞
-          </el-col>
-        </el-row>
-      </el-header>
-
-      <hr style="width:100%;border: 1px solid #eee">
-
-      <el-header>
-        <el-row style="padding:20px 0px 20px 0px ">
-          <el-col :span="24" style="line-height: 60px;text-align: left">
-            学习进度
-          </el-col>
-          <el-col :span="24" style="line-height: 60px;">
-
-            <el-col :span="12" style="padding:20px;border: 1px solid #eee;height:295px">
-              <el-col :span="24" style="line-height: 65px;">
-                <el-progress type="circle" :percentage="52" status="text">
-                  1/2周
-                </el-progress>
-              </el-col>
-              <el-col :span="24" style="line-height: 36px;">
-                开课进度
-              </el-col>
-              <el-col :span="24" style="line-height: 38px;">
-                开课时间: 2019-04-18 至 2019-05-01
-              </el-col>
-            </el-col>
-
-
-            <el-col :span="12" style="padding:20px;border: 1px solid #eee;height:295px">
-              <el-col :span="24" style="line-height: 65px;">
-                <el-progress type="circle" :percentage="0" status="text">
-                  0%
-                </el-progress>
-              </el-col>
-              <el-col :span="24" style="line-height: 36px;">
-                <el-button size="mini">开始学习</el-button>
-              </el-col>
-            </el-col>
-          </el-col>
-        </el-row>
-
-        <el-row style="padding:20px 0px 20px 0px ">
-          <el-col :span="24" style="line-height: 60px;text-align: left">
-            学习统计
-          </el-col>
-          <el-col :span="24">
-
-            <el-col :span="24" style="border: 1px solid #eee;height:243px">
-              <el-col :span="24" style="line-height: 27px;margin:20px">
-                学习记录
-              </el-col>
-              <el-col :span="24" style="padding:20px">
-                <el-col :span="12" style="line-height: 50px;">
-                  <el-col :span="6">已观看视频</el-col>
-                  <el-col :span="18">00:00:00</el-col>
-                </el-col>
-                <el-col :span="12" style="line-height: 50px;">
-                  <el-col :span="6">已提交考试</el-col>
-                  <el-col :span="18">
-                    <el-progress :percentage="70"  style="margin-top:15px"></el-progress>
-                  </el-col>
-                </el-col>
-
-                <el-col :span="12" style="line-height: 50px;">
-                  <el-col :span="6">已发表帖子</el-col>
-                  <el-col :span="18">0条</el-col>
-                </el-col>
-                <el-col :span="12" style="line-height: 50px;">
-                  <el-col :span="6">已提交作业</el-col>
-                  <el-col :span="18">
-                    <el-progress :percentage="70"  style="margin-top:15px"></el-progress>
-                  </el-col>
-                </el-col>
-
-                <el-col :span="12" style="line-height: 50px;">
-                  <el-col :span="6">已记录笔记</el-col>
-                  <el-col :span="18">0条</el-col>
-                </el-col>
-                <el-col :span="12" style="line-height: 50px;">
-                  <el-col :span="6">已提交测验</el-col>
-                  <el-col :span="18">
-                    <el-progress :percentage="70"  style="margin-top:15px"></el-progress>
-                  </el-col>
-                </el-col>
-              </el-col>
-            </el-col>
-
-            <el-col :span="24" style="border: 1px solid #eee;height:294px">
-              <el-col :span="24" style="line-height: 27px;margin:20px;">
-                <el-col :span="4">&nbsp;</el-col>
-                <el-col :span="16">我的成绩</el-col>
-                <el-col :span="4" style="font-size: 10px;text-align: left">
-                  <a href="#" >查看详情</a>
-                  &nbsp;&nbsp;|&nbsp;&nbsp;
-                  <a href="#">考核标准</a>
-                </el-col>
-              </el-col>
-              <el-col :span="24" style="padding:20px">
-                <el-col :span="6" style="height: 226px;">
-                  <el-progress type="circle" :percentage="0" status="text">0.00分</el-progress>
-                </el-col>
-                <el-col :span="6" style="height: 226px;">
-                  <el-col :span="24" style="line-height: 55px">
-                    <el-col :span="12" style="text-align: left">
-                      <i class="el-icon-caret-right" style="color:#0b5d91"></i>
-                      视频观看
-                    </el-col>
-                    <el-col :span="12">0分</el-col>
-                  </el-col>
-
-                  <el-col :span="24" style="line-height: 55px">
-                    <el-col :span="12" style="text-align: left">
-                      <i class="el-icon-caret-right" style="color:#58fffe"></i>
-                      作业
-                    </el-col>
-                    <el-col :span="12">0分</el-col>
-                  </el-col>
-
-                  <el-col :span="24" style="line-height: 55px">
-                    <el-col :span="12" style="text-align: left">
-                      <i class="el-icon-caret-right" style="color:#53fd85"></i>
-                      测验
-                    </el-col>
-                    <el-col :span="12">0分</el-col>
-                  </el-col>
-                </el-col>
-
-                <el-col :span="6" style="height: 226px;">
-
-                  <el-col :span="24" style="line-height: 55px">
-                    <el-col :span="12" style="text-align: left">
-                      <i class="el-icon-caret-right" style="color:#e1fd53"></i>
-                      考试
-                    </el-col>
-                    <el-col :span="12">0分</el-col>
-                  </el-col>
-
-                  <el-col :span="24" style="line-height: 55px">
-                    <el-col :span="12" style="text-align: left">
-                      <i class="el-icon-caret-right" style="color:#fd7b43"></i>
-                      讨论发帖
-                    </el-col>
-                    <el-col :span="12">0分</el-col>
-                  </el-col>
-
-                  <el-col :span="24" style="line-height: 55px">
-                    <el-col :span="12" style="text-align: left">
-                      <i class="el-icon-caret-right" style="color:#fc749d"></i>
-                      笔记
-                    </el-col>
-                    <el-col :span="12">0分</el-col>
-                  </el-col>
-                </el-col>
-                <el-col :span="6" style="height: 226px;">
-                  各项成绩得分为当前得分，每天00:00会更新一次，最终成绩，依照教师制定的考核标准为准。
-                </el-col>
-
-              </el-col>
-            </el-col>
-
-
-          </el-col>
-        </el-row>
-      </el-header>
-
-    </el-container>
-
-
+  <div>
+    {{list}}
+    <div v-for="index in 3" style="border: 2px solid red;padding:10px">
+      <div v-for="(p,pi) in list[index-1]" style="border: 2px solid green;padding:10px">
+        用户名:<el-input v-model="p.name" size="mini" :key="pi" style="width:200px;margin:10px"></el-input>
+        <div v-for="(c,ci) in p.message" :style="{color:c.title?c.title:'#000'}" style="border: 2px solid blue;padding:10px">
+          标题:<el-input v-model="c.title" size="mini" :key="ci" style="width:400px;"></el-input>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -186,16 +18,36 @@
     name: "progress.vue",
     data() {
       return {
-
+        list:[],
       }
     },
     methods:{
       init:function () {
+        this.list.push([ { "name": "wxj", "message": [ { "title": "red" } ] } ])
+        this.list.push([ { "name": "jf", "message": [ { "title": "blue" } ] } ])
+        this.list.push([ { "name": "cm", "message": [ { "title": "green" } ] } ])
+        /*this.list.push([]);
+        this.list.push([]);
+        this.list.push([]);
+        this.list[0].push({name:'wxj',message:[]});
+        this.list[0][0].message.push({title:'red'})
+
+        this.list[1].push({name:'jf',message:[]});
+        this.list[1][0].message.push({title:'blue'})
+
+        this.list[2].push({name:'cm',message:[]});
+        this.list[2][0].message.push({title:'green'})*/
+        setInterval(()=>{
+          const source=this.list[0].find(i=>i.name==='wxj')
+          let color=source.message[0].title
+          source.message[0].title=color==='red'?'blue':'red';
+        },1000)
 
       },
     },
-    created:function () {
-      this.init();
+    created () {
+      setTimeout(this.init,1000)
+
     },
     filters:{
 
