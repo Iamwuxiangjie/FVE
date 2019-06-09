@@ -54,9 +54,9 @@
         while(past.getTime()<now.getTime()){
           this.dataList.push({
             date:this.dateFormat(past),
-            aPrice:Math.pow(Math.round(Math.random()),2),
-            bPrice:Math.pow(Math.round(Math.random()),2),
-            cPrice:Math.pow(Math.round(Math.random()),2),
+            aPrice:Math.random().toFixed(3)*1000,
+            bPrice:Math.random().toFixed(3)*1000,
+            cPrice:Math.random().toFixed(3)*1000,
           })
           past=this.add(past,1);
         }
@@ -191,8 +191,10 @@
                       });
                       detailData=masterData.filter(i=>{
                         const time=new Date(i.date.replace(/-/g, '/')).getTime();
-                        return time>=min&&time<=max;
+                        const result=time>=min&&time<=max;
+                        return result;
                       })
+                      detailCharts.xAxis[0].setCategories(detailData.map(i=>i.date));
                       fields.forEach((d, index) => {
                         detailCharts.series[index].setData(detailData.map(i => i[d.key]));
                       })
@@ -205,6 +207,12 @@
                 },
                 xAxis: {
                   type: 'datetime',
+                  dateTimeLabelFormats: {
+                    day: '%y-%m-%d',
+                    week: '%y-%m-%d',
+                    month: '%Y-%m',
+                    year: '%Y'
+                  },
                   showLastTickLabel: true,
                   maxZoom: 2 * 24 * 3600000, // fourteen days
                   plotBands: [{
